@@ -21,6 +21,10 @@ function HomePage() {
   const productList = useSelector((state) => state.productList)
   const { error, loading, products, page, pages } = productList
 
+
+  const topRatedProducts = useSelector(state => state.topRatedProducts)
+    const { products:topProducts} = topRatedProducts
+
   useEffect(() => {
     dispatch(listProducts(keyword));
 
@@ -29,7 +33,7 @@ function HomePage() {
   return (
     <div>
       
-      {!keyword && <ProductCarousel />}
+      {!keyword && (topProducts.length !== 0) && <ProductCarousel />}
       <h3>Explore products</h3>
       {loading ? <Loader />
         : error ? <Message variant='danger'>{error} </Message>
