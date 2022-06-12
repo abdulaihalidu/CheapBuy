@@ -33,7 +33,7 @@ function HomePage() {
   return (
     <div>
       
-      {!keyword && (topProducts.length !== 0) && <ProductCarousel />}
+      {!keyword && <ProductCarousel />}
       <h3>Explore products</h3>
       {loading ? <Loader />
         : error ? <Message variant='danger'>{error} </Message>
