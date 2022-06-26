@@ -29,7 +29,7 @@ urlpatterns = [
     path('api/users/', include('base.urls.user_urls')),
     path('api/products/', include('base.urls.product_urls')),
     path('api/orders/', include('base.urls.order_urls')),
-    re_path(r'^media/(?P<page>.*)$', serve,
+    re_path(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT})
 ]
 
